@@ -34,6 +34,29 @@ I opened C:\Users\LetsDefend\Desktop\ChallengeFile\sample.7z with the password i
 
 <br><br>
 
+<p>What is the command used by the script to upload data?</p>
+<strong>Answer: upload:</strong>
+<p>I found on line 215 a reference to an upload: command, indicating the script includes an upload/exfiltration mechanism.</p>
+<img width="853" height="367" alt="image" src="https://github.com/user-attachments/assets/46c082de-288d-42a2-b37f-13d3b9adbf65" />
+
+<br><br>
+
+<p>What is the regex used by the script to filter IP addresses?</p>
+<strong>Answer: ^(127\.|169\.254\.)</strong>
+<p>inspected the script in Notepad++, looked at Get-NetIPAddress on line 86, and found the -nomatch regex ^(127\.|169\.254\.) which excludes loopback and link-local IPs.</p>
+<img width="1041" height="285" alt="image" src="https://github.com/user-attachments/assets/2120b07c-3762-4dfe-a9eb-32c7ab78cd74" />
+
+<br><br>
+
+<p>What is the DLL imported by the script to call keylogging APIs?</p>
+<strong>Answer: user32.dll</strong>
+<p>I inspected the Start-Keylogger function and found DllImport references to user32.dll on lines 99, 101, 103, and 105, which provide access to GetAsyncKeyState (line 119) for monitoring keystrokes.</p>
+<img width="1059" height="373" alt="image" src="https://github.com/user-attachments/assets/b307b164-85eb-4834-bb73-9eee64193b68" />
+
+<br><br>
+
+<p></p>
+
 
 
 
