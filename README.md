@@ -1,5 +1,26 @@
 # PowerShell Keylogger
 
+## Objective
+<p>
+You are a malware analyst investigating a suspected PowerShell malware sample. The malware is designed to establish a connection with a remote server, execute various commands, and potentially exfiltrate data. Your goal is to analyze the malware’s functionality and determine its capabilities.
+
+File Location: C:\Users\LetsDefend\Desktop\ChallengeFile\sample.7z
+
+File Password: infected
+</p>
+
+<br><br>
+
+## Skills Learned
+<ul>
+  <li>Script analysis using Notepad++.</li>
+  <li>Identified keylogging and persistence functions.</li>
+  <li>Detected data exfiltration and storage methods.</li>
+  <li>Recognized DLL imports and regex filtering.</li>
+  <li>Understood connection retry logic.</li>
+</ul>
+
+
 <br><br>
 
 ## Investigation
@@ -55,7 +76,10 @@ I opened C:\Users\LetsDefend\Desktop\ChallengeFile\sample.7z with the password i
 
 <br><br>
 
-<p></p>
+<p>How many seconds does the script wait before re-establishing a connection?</p>
+<strong>Answer: 60</strong>
+<p>I searched the script for Seconds/Start-Sleep and found on line 276 a Start-Sleep 60 in the Establish-Connection error path, which pauses 60 seconds before retrying to reconnect to the C2 server.</p>
+<img width="920" height="279" alt="image" src="https://github.com/user-attachments/assets/42a21aa6-723f-4b81-b45a-40be89076947" />
 
 
 
